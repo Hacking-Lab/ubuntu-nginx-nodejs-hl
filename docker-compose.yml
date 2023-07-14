@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  ubuntu-nginx-nodejs-hl:
+    build: .
+    image: hackinglab/ubuntu-nginx-nodejs-hl:latest
+    environment:
+    - AUTHOR=e1
+    - HL_USER_USERNAME=hacker
+    - HL_USER_PASSWORD=compass
+    ports:
+      - 80:80
