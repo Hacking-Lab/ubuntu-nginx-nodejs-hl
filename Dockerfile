@@ -1,5 +1,5 @@
 FROM hackinglab/ubuntu-base-hl:latest
-LABEL maintainer="Ivan Buetler <ivan.buetler@compass-security.com>"
+LABEL maintainer="Ivan Buetler <ivan.buetler@hacking-lab.com>"
 
 # Add the files
 
