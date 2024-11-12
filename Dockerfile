@@ -1,11 +1,9 @@
 FROM hackinglab/ubuntu-base-hl:latest
 LABEL maintainer="Ivan Buetler <ivan.buetler@hacking-lab.com>"
 
-# Add the files
-
+# Basic Update
 RUN apt-get update -y
-RUN apt-get install sudo -y
-RUN apt-get install -y curl ca-certificates gnupg
+RUN apt-get install sudo curl ca-certificates gnupg nginx apache2-utils openssl -y
 
 # Download and import the NodeSource GPG key
 RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg
@@ -18,12 +16,6 @@ RUN echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesou
 
 # Update and install Node.js
 RUN apt-get update -y && apt-get install -y nodejs
-
-# Install additional packages
-RUN apt-get install -y \
-        nginx \
-        apache2-utils \
-        openssl
 
 ADD root /
 
